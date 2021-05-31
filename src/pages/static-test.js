@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { css } from '@emotion/react';
 
 export default function staticPage({ time }) {
     return (
@@ -6,7 +7,7 @@ export default function staticPage({ time }) {
             <Link href="/">
                 <a>HOME</a>
             </Link>
-            <div>build: {time}</div>
+            <div css={buildTime}>build: {time}</div>
         </div>
     );
 }
@@ -25,3 +26,7 @@ export const getStaticProps = async () => {
     // return { props: { time: new Date().toLocaleString() }, revalidate: 10 };
     return { props: { time: new Date().toLocaleString() } };
 };
+
+const buildTime = css`
+    color: red;
+`;
