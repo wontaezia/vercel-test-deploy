@@ -13,6 +13,9 @@ export default function Main() {
 
     return (
         <div css={searchBox}>
+            <Link href="/static-test">
+                <a>static test</a>
+            </Link>
             <label htmlFor="input">유저 아이디 : </label>
             <input
                 id="input"

@@ -1,5 +1,14 @@
+import Link from 'next/link';
+
 export default function staticPage({ time }) {
-    return <div>{time}</div>;
+    return (
+        <div>
+            <Link href="/">
+                <a>HOME</a>
+            </Link>
+            <div>{time}</div>
+        </div>
+    );
 }
 
 export const getStaticProps = async () => {
