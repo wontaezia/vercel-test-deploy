@@ -6,7 +6,7 @@ export default function staticPage({ time }) {
             <Link href="/">
                 <a>HOME</a>
             </Link>
-            <div>{time}</div>
+            <div>build: {time}</div>
         </div>
     );
 }
@@ -22,5 +22,6 @@ export const getStaticProps = async () => {
 
     // 10초마다 **새로고침 시** 시간이 갱신됩니다.
     // revalidate를 제거하면 빌드한 시점을 맞막으로 업데이트되지 않습니다.
-    return { props: { time: new Date().toLocaleString() }, revalidate: 10 };
+    // return { props: { time: new Date().toLocaleString() }, revalidate: 10 };
+    return { props: { time: new Date().toLocaleString() } };
 };
