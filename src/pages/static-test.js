@@ -1,12 +1,22 @@
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 
 export default function staticPage({ time }) {
+    const [test, setTest] = useState(0);
+
     return (
         <div>
             <Link href="/">
                 <a>HOME</a>
             </Link>
+            <button
+                onClick={() => {
+                    setTest((test) => test + 1);
+                }}
+            >
+                test: {test}
+            </button>
             <div css={buildTime}>build: {time}</div>
         </div>
     );
